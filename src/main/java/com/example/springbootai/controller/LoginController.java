@@ -5,6 +5,8 @@ import com.example.springbootai.dto.LoginRequest;
 import com.example.springbootai.dto.LoginResponse;
 import com.example.springbootai.service.JwtService;
 import com.example.springbootai.service.LoginService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
@@ -17,6 +19,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
+@Tag(name = "Authentication", description = "API for user authentication")
 public class LoginController {
 
     private final LoginService loginService;
@@ -33,6 +36,7 @@ public class LoginController {
     }
 
     @PostMapping("/login")
+    @Operation(summary = "User login", description = "Authenticates the user and returns a JWT token")
     public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest request,
                                                 HttpServletResponse response) {
         LoginResponse loginResponse = loginService.login(request.username(), request.password());
@@ -54,6 +58,7 @@ public class LoginController {
     }
 
     @PostMapping("/logout")
+    @Operation(summary = "User logout", description = "Invalidates the JWT token and logs out the user")
     public ResponseEntity<Map<String, String>> logout(HttpServletResponse response) {
         Cookie cookie = new Cookie(jwtProperties.cookieName(), "");
         cookie.setHttpOnly(true);
