@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: spring-boot-ai
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_boot_ai
+    username: postgres
+    password: secret123
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: public
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    cookie-name: auth-token
+    secret: your-256-bit-secret-change-in-production-must-be-at-least-32-chars
+    expiration-ms: 86400000  # 24 hours
+
+logging:
+  level:
+    org.springframework.security: INFO
+    com.example: DEBUG
