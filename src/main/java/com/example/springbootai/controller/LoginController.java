@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -27,7 +28,7 @@ public class LoginController {
         this.authenticationManager = authenticationManager;
     }
 
-    @PostMapping("/login")
+    @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "User login", description = "Authenticates the user and returns a JWT token")
     public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest request,
                                                 HttpServletResponse response) {
@@ -41,7 +42,7 @@ public class LoginController {
         return ResponseEntity.ok(loginResponse);
     }
 
-    @PostMapping("/logout")
+    @PostMapping(value = "/logout", produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "User logout", description = "Invalidates the JWT token and logs out the user")
     public ResponseEntity<Map<String, String>> logout(HttpServletResponse response) {
         return ResponseEntity.ok(Map.of("message", "Logout successful"));

@@ -4,6 +4,7 @@ import com.example.springbootai.dto.ItemResponse;
 import com.example.springbootai.service.ItemService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,14 +21,14 @@ public class ItemController {
         this.itemService = itemService;
     }
 
-    @GetMapping
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "List all items", description = "Retrieves a list of all items")
     public ResponseEntity<List<ItemResponse>> list() {
         List<ItemResponse> items = itemService.listAll();
         return ResponseEntity.ok(items);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "Get item details", description = "Retrieves the details of a specific item by its ID")
     public ResponseEntity<ItemResponse> details(@PathVariable Long id) {
         ItemResponse item = itemService.getDetails(id);

@@ -4,25 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8c80423-78a4-4f94-9ee9-75c47f2c3b33" name="Changes" comment="gitignore - delete">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootai/security/JwtAuthenticationFilter.java" afterDir="false" />
+    <list default="true" id="f8c80423-78a4-4f94-9ee9-75c47f2c3b33" name="Changes" comment="cors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootai/config/JwtProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootai/config/JwtProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootai/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootai/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootai/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootai/controller/ItemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootai/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootai/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootai/dto/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootai/dto/LoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootai/security/JwtCookieFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootai/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootai/service/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootai/config/JwtProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springbootai/config/JwtProperties.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootai/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springbootai/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootai/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springbootai/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootai/dto/LoginResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springbootai/dto/LoginResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootai/security/JwtCookieFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootai/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springbootai/service/LoginService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +25,8 @@
     <option name="chatModeId" value="Agent" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -180,7 +166,23 @@
       <option name="project" value="LOCAL" />
       <updated>1773743895236</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="jwt token">
+      <option name="closed" value="true" />
+      <created>1773831394773</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773831394773</updated>
+    </task>
+    <task id="LOCAL-00005" summary="cors">
+      <option name="closed" value="true" />
+      <created>1773831950630</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773831950630</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +203,9 @@
     <MESSAGE value="swagger" />
     <MESSAGE value="gitignore" />
     <MESSAGE value="gitignore - delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore - delete" />
+    <MESSAGE value="jwt token" />
+    <MESSAGE value="cors" />
+    <option name="LAST_COMMIT_MESSAGE" value="cors" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
