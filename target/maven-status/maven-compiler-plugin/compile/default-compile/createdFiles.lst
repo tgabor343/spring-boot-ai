@@ -1,6 +1,6 @@
 com\example\springbootai\dto\LoginResponse.class
 com\example\springbootai\repository\UserRepository.class
-com\example\springbootai\security\JwtCookieFilter.class
+com\example\springbootai\security\JwtAuthenticationFilter.class
 com\example\springbootai\entity\Item.class
 com\example\springbootai\config\GlobalExceptionHandler.class
 com\example\springbootai\dto\LoginRequest.class

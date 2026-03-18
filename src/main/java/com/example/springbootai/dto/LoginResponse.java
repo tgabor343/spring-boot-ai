@@ -9,13 +9,15 @@ public record LoginResponse(
     @Schema(description = "Message describing the result")
     String message,
     @Schema(description = "Username of the logged-in user")
-    String username
+    String username,
+    @Schema(description = "JWT token for authentication")
+    String token
 ) {
-    public static LoginResponse ok(String username) {
-        return new LoginResponse(true, "Login successful", username);
+    public static LoginResponse ok(String username, String token) {
+        return new LoginResponse(true, "Login successful", username, token);
     }
 
     public static LoginResponse failure(String message) {
-        return new LoginResponse(false, message, null);
+        return new LoginResponse(false, message, null, null);
     }
 }

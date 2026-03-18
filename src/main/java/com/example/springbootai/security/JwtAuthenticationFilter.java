@@ -1,10 +1,8 @@
 package com.example.springbootai.security;
 
-import com.example.springbootai.config.JwtProperties;
 import com.example.springbootai.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -18,20 +16,18 @@ import java.io.IOException;
 import java.util.List;
 
 @Component
-public class JwtCookieFilter extends OncePerRequestFilter {
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    private final JwtProperties jwtProperties;
     private final JwtService jwtService;
 
-    public JwtCookieFilter(JwtProperties jwtProperties, JwtService jwtService) {
-        this.jwtProperties = jwtProperties;
+    public JwtAuthenticationFilter(JwtService jwtService) {
         this.jwtService = jwtService;
     }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
-        String token = getTokenFromCookie(request);
+        String token = getTokenFromHeader(request);
 
         if (token != null) {
             String username = jwtService.validateAndGetUsername(token);
@@ -49,15 +45,10 @@ public class JwtCookieFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    private String getTokenFromCookie(HttpServletRequest request) {
-        Cookie[] cookies = request.getCookies();
-        if (cookies == null) {
-            return null;
-        }
-        for (Cookie cookie : cookies) {
-            if (jwtProperties.cookieName().equals(cookie.getName())) {
-                return cookie.getValue();
-            }
+    private String getTokenFromHeader(HttpServletRequest request) {
+        String authHeader = request.getHeader("Authorization");
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            return authHeader.substring(7);
         }
         return null;
     }

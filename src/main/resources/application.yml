@@ -23,7 +23,6 @@ server:
 
 app:
   jwt:
-    cookie-name: auth-token
     secret: your-256-bit-secret-change-in-production-must-be-at-least-32-chars
     expiration-ms: 86400000  # 24 hours
 

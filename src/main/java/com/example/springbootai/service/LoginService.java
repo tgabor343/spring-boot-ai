@@ -11,16 +11,21 @@ public class LoginService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final JwtService jwtService;
 
-    public LoginService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public LoginService(UserRepository userRepository, PasswordEncoder passwordEncoder, JwtService jwtService) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.jwtService = jwtService;
     }
 
     public LoginResponse login(String username, String password) {
         return userRepository.findByUsername(username)
             .filter(user -> passwordEncoder.matches(password, user.getPasswordHash()))
-            .map(user -> LoginResponse.ok(user.getUsername()))
+            .map(user -> {
+                String token = jwtService.generateToken(user.getUsername());
+                return LoginResponse.ok(user.getUsername(), token);
+            })
             .orElse(LoginResponse.failure("Invalid username or password"));
     }
 }
