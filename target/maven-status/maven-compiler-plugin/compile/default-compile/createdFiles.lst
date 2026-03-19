@@ -10,6 +10,7 @@ com\example\springbootai\SpringBootAiApplication.class
 com\example\springbootai\dto\ItemResponse.class
 com\example\springbootai\controller\LoginController.class
 com\example\springbootai\service\ItemService.class
+com\example\springbootai\config\OpenApiConfig.class
 com\example\springbootai\service\JwtService.class
 com\example\springbootai\config\JwtProperties.class
 com\example\springbootai\repository\ItemRepository.class

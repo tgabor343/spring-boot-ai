@@ -16,7 +16,6 @@ spring:
       hibernate:
         format_sql: true
         default_schema: public
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 server:
   port: 8080
